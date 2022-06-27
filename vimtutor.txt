@@ -1,0 +1,139 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 1
+
+1.  The cursor is moved using either the arrow keys or the hjkl keys.
+    h (left)    j (down)    k (up)      l (right)
+
+2.  To start Vim from the shell prompt:     vim [FILENAME] <ENTER>
+
+3.  To exit Vim:    <ESC>   :q!     <ENTER>     to trash all changes,
+    OR              <ESC>   :wq     <ENTER>     to save the changes,
+    OR              <ESC>   :x      <ENTER>     to save the changes,
+    OR              <ESC>   :q      <ENTER>     if all changes are saved.
+
+4.  To delete the character at the cursor:  x
+
+5.  To insert or append text:
+    i   type inserted text  <ESC>       insert before the cursor
+    A   type appended text  <ESC>       append after the line
+
+NOTE:   Pressing <ESC> will place you in Normal mode
+        or will cancel an unwanted and partially completed command.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 2
+
+1.  To delete from the cursor up to the next word:  dw
+2.  To delete from the cursor to the end of a line: d$
+3.  To delete a whole line:                         dd
+4.  To repeat a motion prepend it with a number:    2w
+
+5.  The format for a change command is:
+        operator    [number]    motion
+     where:
+        operator    is what to do, such as d for delete
+        [number]    is an optional count to repeat the motion
+        motion      moves over the text to operate on, such as
+                    w (word), e (end of the word), $ (end of line), etc.
+
+6.  To move to the start of the line use a zero:    0
+
+7.  To undo previous actions:           u
+    To undo all the changes on a line:  U
+    To undo the undo's:                 CTRL-R
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 3
+
+1.  To put back text that has just been deleted, type p. This puts the
+    deleted text AFTER the cursor (if a line was deleted it will go on the
+    line below the cursor).
+
+2.  To replace the character under the cursor, type r and then the
+    character you want to have there.
+
+3.  The change operator allows you to change from the cursor to where the
+    motion takes you.
+        ce      to change from the cursor to the end of the word,
+        c$      to change to the end of a line.
+
+4.  The format for change is:
+        c   [number]    motion
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson  CTRL-G displays your location in the file and the file status.
+        G           moves to the end of the file,
+        gg          moves to the first line,
+        number G    moves to that line number,
+        CTRL-O      takes you back to older positions,
+        CTRL-I      takes to newer positions.
+
+2.  Search
+        /   followed by a phrase searches FORWARD for the phrase,
+        ?   followed by a phrase searches BACKWARD for the phrase,
+        n   to find the next occurrence in the same direction,
+        N   to search in the opposite direction,
+
+3.  Typing % while the cursor is on a (,),[,],{, or } goes to its match.
+
+4.  Substitutes
+    :s/old/new          to substitute new for the first old in a line,
+    :s/old/new/g        to substitute new for all 'old's on a line,
+    :#,#s/old/new/g     to substitute phrases between two lines,
+    :%s/old/new/g       to substitute all occurrences in the file,
+    :%s/old/new/gc      to ask for confirmation each time add 'c'.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 5
+
+1.  :!command  executes an external command.
+    Some useful examples are:
+        (MS-DOS)        (Unix)
+        :!dir           :!ls                shows a directory listing.
+        :!del FILENAME  :!rm FILENAME       removes file FILENAME.
+
+2.  :w FILENAME             writes the current Vim file to disk named FILENAME.
+3.  v motion :w FILENAME    saves the Visually selected lines in file FILENAME.
+4.  :r FILENAME             retrieves disk file FILENAME and puts it below the
+                            cursor position.
+5.  :r !dir                 reads the output of the dir command and puts it
+                            below the cursor position.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 6
+
+1.  o   to open a line BELOW the cursor and start Insert mode,
+    O   to open a line ABOVE the cursor and start Insert mode.
+
+2.  a   to insert text AFTER the cursor,
+    A   to insert text after the end of the line.
+
+3.  y   to yank (copie) text,
+    p   to put (paste) it.
+
+4.  Typing a capital R enters Replace mode until <ESC> is pressed.
+
+5.  Typing ":set xxx" sets the option "xxx". Some options are:
+        'ic'    'ignorecase'    ignore upper/lower case when searching
+        'is'    'incsearch'     show partial matches for a search phrase
+        'hls'   'hlsearch'      highlight all matching phrases
+    You can either use the long or the short option name.
+
+6.  Prepend "no" to switch an option off:
+        :set noic
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            Lesson 7
+
+1.  :help or press <F1> or <Help>   to open a help window.
+2.  :help cmd                       to find help on cmd .
+3.  CTRL-W CTRL-W                   to jump to another window
+4.  Type  :q  to close the help window
+
+5.  Create a .vimrc startup script to keep your preferred settings.
+
+6.  When typing a : command, 
+    CTRL-D to see possible completions,
+    <TAB> to use one completion.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
