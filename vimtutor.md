@@ -1,15 +1,17 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 1
+# VimTutor Summary
+## Lesson 1
 
 1.  The cursor is moved using either the arrow keys or the hjkl keys.
     h (left)    j (down)    k (up)      l (right)
 
-2.  To start Vim from the shell prompt:     vim [FILENAME] <ENTER>
+2.  To start Vim from the shell prompt
+    type:   vim [FILENAME] <ENTER>
 
-3.  To exit Vim:    <ESC>   :q!     <ENTER>     to trash all changes,
-    OR              <ESC>   :wq     <ENTER>     to save the changes,
-    OR              <ESC>   :x      <ENTER>     to save the changes,
-    OR              <ESC>   :q      <ENTER>     if all changes are saved.
+3.  To exit Vim
+    type:   <ESC>   :q!     <ENTER>     to trash all changes,
+    OR      <ESC>   :wq     <ENTER>     to save the changes,
+    OR      <ESC>   :x      <ENTER>     to save the changes,
+    OR      <ESC>   :q      <ENTER>     if all changes are saved.
 
 4.  To delete the character at the cursor:  x
 
@@ -17,33 +19,38 @@
     i   type inserted text  <ESC>       insert before the cursor
     A   type appended text  <ESC>       append after the line
 
-NOTE:   Pressing <ESC> will place you in Normal mode
-        or will cancel an unwanted and partially completed command.
+NOTE.
+    Pressing <ESC> will place you in Normal mode
+    or will cancel an unwanted and partially completed command.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 2
+## Lesson 2
 
-1.  To delete from the cursor up to the next word:  dw
-2.  To delete from the cursor to the end of a line: d$
-3.  To delete a whole line:                         dd
-4.  To repeat a motion prepend it with a number:    2w
+1.  Delete
+    dw      to delete from the cursor up to the next word,
+    d$      to delete from the cursor to the end of a line,
+    dd      to delete a whole line,
+    2w      to repeat a motion prepend it with a number,
 
-5.  The format for a change command is:
+2.  Move
+    0       to move to the start of the line
+    w       to move to the start of the next word
+    e       to move to the end of the next word
+    ^       to move to the first char on the line
+    $       to move to the end of the line
+
+3.  The format for a change command is:
         operator    [number]    motion
      where:
         operator    is what to do, such as d for delete
         [number]    is an optional count to repeat the motion
-        motion      moves over the text to operate on, such as
-                    w (word), e (end of the word), $ (end of line), etc.
+        motion      moves over the text to operate on
 
-6.  To move to the start of the line use a zero:    0
+4.  Undo
+    u           to undo previous actions,
+    U           to undo all the changes on a line,
+    CTRL-R      to undo the undo's.  
 
-7.  To undo previous actions:           u
-    To undo all the changes on a line:  U
-    To undo the undo's:                 CTRL-R
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 3
+## Lesson 3
 
 1.  To put back text that has just been deleted, type p. This puts the
     deleted text AFTER the cursor (if a line was deleted it will go on the
@@ -60,8 +67,10 @@ NOTE:   Pressing <ESC> will place you in Normal mode
 4.  The format for change is:
         c   [number]    motion
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson  CTRL-G displays your location in the file and the file status.
+## Lesson 4
+
+1.  Position
+        CTRL-G      displays location in the file and the file status,
         G           moves to the end of the file,
         gg          moves to the first line,
         number G    moves to that line number,
@@ -83,8 +92,7 @@ NOTE:   Pressing <ESC> will place you in Normal mode
     :%s/old/new/g       to substitute all occurrences in the file,
     :%s/old/new/gc      to ask for confirmation each time add 'c'.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 5
+## Lesson 5
 
 1.  :!command  executes an external command.
     Some useful examples are:
@@ -99,16 +107,18 @@ NOTE:   Pressing <ESC> will place you in Normal mode
 5.  :r !dir                 reads the output of the dir command and puts it
                             below the cursor position.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 6
+## Lesson 6
 
-1.  o   to open a line BELOW the cursor and start Insert mode,
+1.  Open a line
+    o   to open a line BELOW the cursor and start Insert mode,
     O   to open a line ABOVE the cursor and start Insert mode.
 
-2.  a   to insert text AFTER the cursor,
+2.  Insert
+    a   to insert text AFTER the cursor,
     A   to insert text after the end of the line.
 
-3.  y   to yank (copie) text,
+3.  Copie-paste
+    y   to yank (copie) text,
     p   to put (paste) it.
 
 4.  Typing a capital R enters Replace mode until <ESC> is pressed.
@@ -122,18 +132,19 @@ NOTE:   Pressing <ESC> will place you in Normal mode
 6.  Prepend "no" to switch an option off:
         :set noic
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 7
+## Lesson 7
 
-1.  :help or press <F1> or <Help>   to open a help window.
-2.  :help cmd                       to find help on cmd .
-3.  CTRL-W CTRL-W                   to jump to another window
-4.  Type  :q  to close the help window
+1.  To open a help window.
+    :help or press <F1> or <Help>   
+2.  To find help on cmd .
+    :help cmd                       
+3.  To jump to another window
+    CTRL-W CTRL-W                   
+4.  To close the help (any other) window
+    :q
 
 5.  Create a .vimrc startup script to keep your preferred settings.
 
 6.  When typing a : command, 
     CTRL-D to see possible completions,
     <TAB> to use one completion.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
